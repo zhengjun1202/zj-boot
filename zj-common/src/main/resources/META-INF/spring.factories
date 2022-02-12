@@ -2,3 +2,6 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.zj.boot.common.CommonAutoConfiguration
+
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+com.zj.boot.common.exception.anlyzer.MissKeyAttributeExceptionAnalyzer
