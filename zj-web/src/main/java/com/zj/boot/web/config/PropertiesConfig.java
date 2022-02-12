@@ -1,11 +1,9 @@
-package com.zj.boot.common.config;
+package com.zj.boot.web.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author 郑军
@@ -31,5 +29,16 @@ public class PropertiesConfig {
 
     private Map<String, List<String>> listMap;
 
+    private Security security;
 
+    @Data
+    public static class Security {
+
+        private String username;
+
+        private String password;
+
+        private List<String> roles = new ArrayList<>(Collections.singleton("USER"));
+
+    }
 }
