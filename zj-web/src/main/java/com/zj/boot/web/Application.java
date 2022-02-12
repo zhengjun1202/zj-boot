@@ -1,11 +1,11 @@
 package com.zj.boot.web;
 
-import com.zj.boot.common.config.PropertiesConfig;
+import com.zj.boot.web.config.PropertiesConfig;
 import com.zj.boot.web.repository.Cat;
 import com.zj.boot.web.repository.User;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
@@ -16,7 +16,16 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class Application {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(Application.class, args);
+        // 直接通过SpringApplication的静态run方法启动
+        //ConfigurableApplicationContext run = SpringApplication.run(Application.class, args);
+
+        // 通过new SpringApplication的方式启动
+        //SpringApplication springApplication = new SpringApplication(Application.class);
+        //ConfigurableApplicationContext run = springApplication.run(args);
+
+        // 通过SpringApplicationBuilder的方式构建
+        ConfigurableApplicationContext run = new SpringApplicationBuilder().sources(Application.class).run(args);
+
 
 
         ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
