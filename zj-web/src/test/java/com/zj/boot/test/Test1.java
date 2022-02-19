@@ -1,12 +1,9 @@
 package com.zj.boot.test;
 
-import com.zj.boot.common.NameInterface;
-import com.zj.boot.common.util.ClassUtil;
-import org.reflections.ReflectionUtils;
-import org.reflections.scanners.Scanners;
-
-import java.util.List;
-import java.util.Set;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
+import org.junit.Test;
+import org.yaml.snakeyaml.Yaml;
 
 /**
  * @author 郑军
@@ -15,13 +12,18 @@ import java.util.Set;
 public class Test1 {
 
     public static void main(String[] args) {
-        Set<Class<? extends NameInterface>> classSet = ClassUtil.getSubClass(NameInterface.class, "com.zj.boot");
 
-        for (Class<?> aClass : classSet) {
-            System.out.println(aClass);
-        }
+    }
 
-        ReflectionUtils.getSuperTypes(NameInterface.class);
+
+    @Test
+    public void testYaml() {
+
+        Yaml yaml = new Yaml();
+        Object load = yaml.load(ClassLoader.getSystemClassLoader().getResourceAsStream("application.yml"));
+
+        JSON parse = JSONUtil.parse(load);
+        System.out.println(parse.toJSONString(2));
 
     }
 }
