@@ -28,7 +28,7 @@ public class Application {
 
 
 
-        ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
+        /*ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
         // 获取实体类定义的名称
         String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
@@ -44,13 +44,8 @@ public class Application {
         System.out.println(user);
 
         PropertiesConfig propertiesConfig = beanFactory.getBean(PropertiesConfig.class);
-        System.out.println(propertiesConfig);
+        System.out.println(propertiesConfig);*/
 
-
-        String[] applicationNames = beanFactory.getBeanNamesForType(Application.class);
-        for (String applicationName : applicationNames) {
-            System.out.println(beanFactory.getBean(applicationName).toString());
-        }
     }
 
 }
