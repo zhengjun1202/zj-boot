@@ -1,0 +1,8 @@
+### -------- 包外的config目录中的配置文件优先级高于包外目录下的  -------- ###
+
+spring:
+  profiles:
+    #include: system
+
+cat:
+  #name: 包外/config/tom

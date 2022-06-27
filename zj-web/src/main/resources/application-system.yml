@@ -1,7 +1,7 @@
 
 
 cat:
-  #name: resources下/config/system-tom
+  name: resources下/system-tom
 
 config:
   #string: 字符串

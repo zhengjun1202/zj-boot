@@ -1,0 +1,8 @@
+### -------- resources下的config目录中的配置文件优先级高于resource目录下的  -------- ###
+
+spring:
+  profiles:
+    include: system
+
+cat:
+  name: reources下/config/tom
