@@ -4,6 +4,7 @@ import com.zj.boot.common.exception.MissKeyAttributeException;
 import com.zj.boot.web.repository.Cat;
 import com.zj.boot.web.test.SoutName;
 import com.zj.boot.web.test.SoutName1;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,6 +44,11 @@ public class BeanConfiguration {
     @Bean
     public SoutName afterApplicationStared() {
         return new SoutName();
+    }
+
+    @Bean
+    public ApplicationRunArguments applicationRunArguments(ApplicationArguments arguments) {
+        return new ApplicationRunArguments(arguments);
     }
 
 
