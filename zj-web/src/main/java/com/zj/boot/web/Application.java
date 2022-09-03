@@ -1,11 +1,11 @@
 package com.zj.boot.web;
 
 import com.zj.boot.web.config.PropertiesConfig;
-import com.zj.boot.web.repository.Cat;
-import com.zj.boot.web.repository.User;
+import com.zj.boot.web.test.repository.Cat;
+import com.zj.boot.web.test.repository.User;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
@@ -17,23 +17,23 @@ public class Application {
 
     public static void main(String[] args) {
         // 直接通过SpringApplication的静态run方法启动
-        //ConfigurableApplicationContext run = SpringApplication.run(Application.class, args);
+        ConfigurableApplicationContext run = SpringApplication.run(Application.class, args);
 
         // 通过new SpringApplication的方式启动
-        //SpringApplication springApplication = new SpringApplication(Application.class);
-        //ConfigurableApplicationContext run = springApplication.run(args);
+        // SpringApplication springApplication = new SpringApplication(Application.class);
+        // ConfigurableApplicationContext run = springApplication.run(args);
 
         // 通过SpringApplicationBuilder的方式构建
-        ConfigurableApplicationContext run = new SpringApplicationBuilder().sources(Application.class).run(args);
+        //ConfigurableApplicationContext run = new SpringApplicationBuilder().sources(Application.class).run(args);
 
 
 
-        /*ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
+        ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
         // 获取实体类定义的名称
-        String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
-        for (String beanDefinitionName : beanDefinitionNames) {
-            System.out.println(beanFactory.getBean(beanDefinitionName).toString());
-        }
+//        String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
+//        for (String beanDefinitionName : beanDefinitionNames) {
+//            System.out.println(beanFactory.getBean(beanDefinitionName).toString());
+//        }
 
         String[] catNames = beanFactory.getBeanNamesForType(Cat.class);
         for (String catName : catNames) {
@@ -43,8 +43,11 @@ public class Application {
         User user = beanFactory.getBean("user", User.class);
         System.out.println(user);
 
+        Cat cat = beanFactory.getBean(Cat.class);
+        System.out.println(cat.getName());
+
         PropertiesConfig propertiesConfig = beanFactory.getBean(PropertiesConfig.class);
-        System.out.println(propertiesConfig);*/
+        System.out.println(propertiesConfig);
 
     }
 

@@ -1,4 +1,4 @@
-package com.zj.boot.web.repository;
+package com.zj.boot.web.test.repository;
 
 import lombok.Data;
 import org.springframework.stereotype.Service;

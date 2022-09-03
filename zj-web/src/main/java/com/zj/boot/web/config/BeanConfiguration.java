@@ -1,7 +1,7 @@
 package com.zj.boot.web.config;
 
 import com.zj.boot.common.exception.MissKeyAttributeException;
-import com.zj.boot.web.repository.Cat;
+import com.zj.boot.web.test.repository.Cat;
 import com.zj.boot.web.test.SoutName;
 import com.zj.boot.web.test.SoutName1;
 import org.springframework.boot.ApplicationArguments;

@@ -25,7 +25,11 @@ public class PropertiesConfig {
 
     private Map<String, String> map;
 
+    private Map<String, Security> securityMap;
+
     private List<Map<String, String>> mapList;
+
+    private List<Security> securityList;
 
     private Map<String, List<String>> listMap;
 
